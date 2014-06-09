@@ -1,0 +1,58 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+svg{
+    display:block;
+    fill: #fff;
+    font-family: calibri;
+    font-weight: bold;
+}
+/* Welcome screen */
+#welcome-screen{
+    display: block;
+}
+#welcome-screen #title1 { font-size: 180px }
+#welcome-screen #title2 { font-size: 65px; fill: #0af }
+#welcome-screen #btn-play { font-size: 65px; }
+#welcome-screen #btn-play:hover{ cursor: pointer; fill:#444;}
+
+/* Game over screen */
+#game-over{
+    display: none;
+}
+#game-over #game-over-title {
+    font-size: 150px;
+    fill: #f00;
+}
+#game-over #btn-play-again{
+    font-size: 65px;
+}
+#game-over #btn-play-again:hover{ cursor: pointer; fill:#444;}
+
+/* Instructions */
+#instructions {
+    position: absolute;
+    left: 38%;
+    bottom: 1%;
+    color: #ddd;
+}
+/* Score */
+#score{
+    position: absolute;
+    top: 10%;
+    left: 70%;
+    display: none;
+}
+
+/* Canvas */
+canvas {
+    display: none;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
