@@ -11,11 +11,9 @@ var requestAnimFrame = (function(){
         };
 })();
 
-// TODO: resources
-resources.load([
-    'img/sprites.png'
-]);
-resources.onReady(initGame);
+// Get the canvas context
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
 
 // The main game loop
 var lastTime;
@@ -41,16 +39,17 @@ function startGame() {
     document.getElementById('btn-play-again').addEventListener('click', function() {
         resetGame();
     });
-    
-    // Get the canvas context
-    var canvas = document.getElementById('canvas');
-    var ctx = canvas.getContext('2d');
 
     resetGame();
     lastTime = Date.now();
     main();
 }
 
+// TODO: resources
+resources.load([
+    'img/sprites.png'
+]);
+resources.onReady(initGame);
 
 // Reset game to original state
 function resetGame() {
