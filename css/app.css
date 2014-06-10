@@ -18,7 +18,7 @@ svg text{
 
 /* Game over screen */
 #game-over{
-    display: none;
+    display: block;
 }
 #game-over #game-over-title {
     font-size: 1400%;
