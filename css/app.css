@@ -51,8 +51,6 @@ svg text{
 /* Canvas */
 canvas {
     display: none;
-    width: 50%;
-    height: 50%;
     margin: auto;
     position: absolute;
     top: 0;
