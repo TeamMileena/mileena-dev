@@ -3,19 +3,17 @@ html, body {
     padding: 0;
     color: #fff;
 }
-svg{
+svg text{
     display:block;
     fill: #fff;
     font-family: calibri;
     font-weight: bold;
+    text-anchor: middle;
 }
 /* Welcome screen */
-#welcome-screen{
-    display: block;
-}
-#welcome-screen #title1 { font-size: 180px }
-#welcome-screen #title2 { font-size: 65px; fill: #0af }
-#welcome-screen #btn-play { font-size: 65px; }
+#welcome-screen #title1 { font-size: 1400% }
+#welcome-screen #title2 { font-size: 500%; fill: #0af }
+#welcome-screen #btn-play { font-size: 500%; }
 #welcome-screen #btn-play:hover{ cursor: pointer; fill:#444;}
 
 /* Game over screen */
@@ -23,21 +21,25 @@ svg{
     display: none;
 }
 #game-over #game-over-title {
-    font-size: 150px;
+    font-size: 1400%;
     fill: #f00;
 }
 #game-over #btn-play-again{
-    font-size: 65px;
+    font-size: 500%;
 }
 #game-over #btn-play-again:hover{ cursor: pointer; fill:#444;}
 
 /* Instructions */
 #instructions {
     position: absolute;
-    left: 38%;
+    width: 500px;
+    left:0;
+    right:0;
     bottom: 1%;
-    color: #ddd;
-}
+    text-align: center;
+    color: #0af;
+    margin: auto;
+ }
 /* Score */
 #score{
     display: none;
