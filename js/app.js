@@ -15,12 +15,17 @@ var ctx = canvas.getContext('2d');
 
 //load the audio files
 var blasterSound = document.getElementById('blaster-snd');
+var explosionSound = document.getElementById('explode-snd');
 
-//function for playing the sounds
+//functions for playing the sounds
 function playBlasterSound() {
-
     blasterSound.load();
     blasterSound.play();
+}
+
+function playExplosionSound() {
+    explosionSound.load();
+    explosionSound.play();
 }
 
 // The main game loop
@@ -265,6 +270,8 @@ function checkCollisions() {
                 i--;
 
                 score += 100;
+
+                playExplosionSound();
 
                 explosions.push({
                     pos: pos,
