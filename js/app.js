@@ -14,10 +14,16 @@ var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
 //load the audio files
+var musicSound = document.getElementById('music-snd');
 var blasterSound = document.getElementById('blaster-snd');
 var explosionSound = document.getElementById('explode-snd');
 
 //functions for playing the sounds
+function playMusic() {
+    musicSound.load();
+    musicSound.play();
+}
+
 function playBlasterSound() {
     blasterSound.load();
     blasterSound.play();
@@ -67,6 +73,8 @@ document.getElementById('btn-play').addEventListener('click', initGame);
 
 // Reset game to original state
 function resetGame() {
+    //Start background music
+    playMusic();
     // Display canvas
     document.getElementById('canvas').style.display = 'block';
     // Display score
