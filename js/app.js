@@ -296,7 +296,7 @@ function checkPlayerBounds() {
 // Draw everything
 function render() {
     //ctx.fillStyle = terrainPattern;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     
 
     // Render the player
