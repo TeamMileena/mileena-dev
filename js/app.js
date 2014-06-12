@@ -13,6 +13,16 @@ var requestAnimFrame = (function () {
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
+//load the audio files
+var blasterSound = document.getElementById('blaster-snd');
+
+//function for playing the sounds
+function playBlasterSound() {
+
+    blasterSound.load();
+    blasterSound.play();
+}
+
 // The main game loop
 var lastTime;
 function main() {
@@ -153,6 +163,8 @@ function handleInput(dt) {
        Date.now() - lastFire > 100) {
         var x = player.pos[0] + player.sprite.size[0] / 2;
         var y = player.pos[1] + player.sprite.size[1] / 2;
+
+        playBlasterSound();
 
         bullets.push({
             pos: [x, y],
