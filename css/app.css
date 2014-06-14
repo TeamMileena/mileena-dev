@@ -45,9 +45,14 @@ svg text{
     display: none;
     position: absolute;
     top: 10%;
-    left: 70%;
+    left: 85%;
 }
-
+ #lives{
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 80%;
+}
 /* Canvas */
 canvas {
     display: none;
