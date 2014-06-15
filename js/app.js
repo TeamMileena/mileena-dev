@@ -182,7 +182,7 @@ function update(dt) {
 
     scoreEl.innerHTML = "scores: " +score;
     livesEl.innerHTML = "lives: " + lives;
-    bulletsLeftEl.innerHTML = "Bullets untill engine overheat: " + shotsCountDown;
+    bulletsLeftEl.innerHTML = "Bullets untill engine heat up: " + shotsCountDown;
 }0;
 
 function handleInput(dt) {
