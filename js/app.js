@@ -311,7 +311,7 @@ function checkCollisions() {
                     sprite: new Sprite('img/ships.png',
                                        [0, 136],
                                        [43, 39],
-                                       30,
+                                       50,
                                        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],
                                        null,
                                        true)
