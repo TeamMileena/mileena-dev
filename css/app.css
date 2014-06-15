@@ -53,6 +53,12 @@ svg text{
     top: 10%;
     left: 80%;
 }
+#bulletsLeft{
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 67%;
+}
 /* Canvas */
 canvas {
     display: none;

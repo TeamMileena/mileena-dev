@@ -80,7 +80,9 @@ function resetGame(newLives) {
     // Display score
     document.getElementById('score').style.display = 'block';
 	// Display lives
-	document.getElementById('lives').style.display = 'block';
+    document.getElementById('lives').style.display = 'block';
+    // Display bullets left
+    document.getElementById('bulletsLeft').style.display = 'block';
     // Hide welcome screen
     document.getElementById('welcome-screen').style.display = 'none';
     // Hide game over screen
@@ -100,6 +102,9 @@ function resetGame(newLives) {
     bullets = [];
 
     player.pos = [50, canvas.height / 2];
+
+    shotDelay = 100;
+    shotsCountDown = shotsUntilDelay;
 };
 
 // Game over
@@ -135,12 +140,17 @@ var lastFire = Date.now(),
 
 var score = 0,
     scoreEl = document.getElementById('score');
-	livesEl = document.getElementById('lives');
+    livesEl = document.getElementById('lives');
+    bulletsLeftEl = document.getElementById('bulletsLeft');
+
 
 // Speed in pixels per second
 var playerSpeed = 200,
     bulletSpeed = 500,
-    enemySpeed = 100;
+    enemySpeed = 100,
+    shotDelay = 100,
+    shotsUntilDelay = 40,
+    shotsCountDown = shotsUntilDelay;
 
 // Update game objects
 function update(dt) {
@@ -157,12 +167,22 @@ function update(dt) {
             sprite: new Sprite('img/ships.png', [0, 100], [56, 29],
                                6, [0, 1, 2, 3])
         });
+
+        if (shotDelay >= 350) {
+            shotsCountDown = 20;
+        }
+
+        if (shotsCountDown <= 0) {
+            shotDelay += 50;
+            shotsCountDown = shotsUntilDelay;
+        }
     }
 
     checkCollisions();
 
     scoreEl.innerHTML = "scores: " +score;
-	livesEl.innerHTML = "lives: " + lives;
+    livesEl.innerHTML = "lives: " + lives;
+    bulletsLeftEl.innerHTML = "Bullets untill engine overheat: " + shotsCountDown;
 }0;
 
 function handleInput(dt) {
@@ -182,29 +202,22 @@ function handleInput(dt) {
         player.pos[0] += playerSpeed * dt;
     }
 
+
     if (input.isDown('SPACE') &&
        !isGameOver &&
-       Date.now() - lastFire > 100) {
+       Date.now() - lastFire > shotDelay) {
         var x = player.pos[0] + player.sprite.size[0] / 2;
         var y = player.pos[1] + player.sprite.size[1] / 2;
 
         playBlasterSound();
 
+        shotsCountDown = shotsCountDown - 1;
+        
         bullets.push({
             pos: [x, y],
             dir: 'forward',
             sprite: new Sprite('img/ships.png', [0, 39], [18, 8])
         });
-        //bullets.push({
-        //    pos: [x, y],
-        //    dir: 'up',
-        //    sprite: new Sprite('img/ships.png', [0, 50], [9, 5])
-        //});
-        //bullets.push({
-        //    pos: [x, y],
-        //    dir: 'down',
-        //    sprite: new Sprite('img/ships.png', [0, 60], [9, 5])
-        //});
 
         lastFire = Date.now();
     }
