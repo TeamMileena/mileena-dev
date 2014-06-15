@@ -14,9 +14,9 @@ var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
 //load the audio files
-var musicSound = document.getElementById('music-snd');
-var blasterSound = document.getElementById('blaster-snd');
-var explosionSound = document.getElementById('explode-snd');
+var musicSound = new Audio('sound/valkyries.ogg');
+var blasterSound = new Audio('sound/ISD-Laser1.wav');
+var explosionSound = new Audio('sound/blast.wav');
 
 //functions for playing the sounds
 function playMusic() {
