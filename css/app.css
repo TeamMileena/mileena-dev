@@ -3,6 +3,10 @@ html, body {
     padding: 0;
     color: #fff;
 }
+svg{
+    position: absolute;
+    z-index: 1;
+}
 svg text{
     display:block;
     fill: #fff;
@@ -28,37 +32,6 @@ svg text{
     font-size: 500%;
 }
 #game-over #btn-play-again:hover{ cursor: pointer; fill:#444;}
-
-/* Instructions */
-#instructions {
-    position: absolute;
-    width: 500px;
-    left:0;
-    right:0;
-    bottom: 1%;
-    text-align: center;
-    color: #0af;
-    margin: auto;
- }
-/* Score */
-#score{
-    display: none;
-    position: absolute;
-    top: 10%;
-    left: 85%;
-}
- #lives{
-    display: none;
-    position: absolute;
-    top: 10%;
-    left: 80%;
-}
-#bulletsLeft{
-    display: none;
-    position: absolute;
-    top: 10%;
-    left: 67%;
-}
 /* Canvas */
 canvas {
     display: none;
@@ -68,5 +41,41 @@ canvas {
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 2;
+}
+/* Instructions */
+#instructions {
+    width: 500px;
+    text-align: center;
+    margin: auto;
+    left:0;
+    right:0;
+    bottom: 0;
+}
+/* Lives */
+#lives{
+    display: none;
+    top: 12%;
+    left: 90%;
+}
+/* Bullets */
+#bulletsLeft{
+    display: none;
+    top: 16%;
+    left: 90%;
+}
+/* Score */
+#score{
+    display: none;
+    top: 20%;
+    left: 90%;
+}
+
+
+.game-info{
+    position: absolute;
+    z-index: 2;
+    color:  #0af;
+    font-weight: bold;
 }
 

@@ -87,8 +87,7 @@ function resetGame(newLives) {
     document.getElementById('welcome-screen').style.display = 'none';
     // Hide game over screen
     document.getElementById('game-over').style.display = 'none';
-	//debugger;
-    // TODO: variables declaration
+
     isGameOver = false;
     gameTime = 0;
 	if(!(newLives >0)){
@@ -113,8 +112,10 @@ function gameOver() {
     document.getElementById('canvas').style.display = 'none';
     // Hide score
     document.getElementById('score').style.display = 'none';
-	// hide lives 
+	// Hide lives
 	document.getElementById('lives').style.display = 'none';
+    // Hide score
+    document.getElementById('bulletsLeft').style.display = 'none';
     // Hide welcome screen
     document.getElementById('welcome-screen').style.display = 'none';
     // Display game over screen
@@ -180,9 +181,9 @@ function update(dt) {
 
     checkCollisions();
 
-    scoreEl.innerHTML = "scores: " +score;
-    livesEl.innerHTML = "lives: " + lives;
-    bulletsLeftEl.innerHTML = "Bullets untill engine heat up: " + shotsCountDown;
+    scoreEl.innerHTML = "Score: " +score;
+    livesEl.innerHTML = "Lives: " + lives;
+    bulletsLeftEl.innerHTML = "Bullets left: " + shotsCountDown;
 }0;
 
 function handleInput(dt) {
