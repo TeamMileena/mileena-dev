@@ -1,4 +1,4 @@
-var requestAnimFrame = (function () {
+var requestAnimationFrame = (function () {
     return window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
         window.mozRequestAnimationFrame ||
@@ -40,21 +40,20 @@ function main() {
     var now = Date.now();
     var dt = (now - lastTime) / 1000.0;
 
-    // TODO: update() and render()
     update(dt);
     render();
 
     lastTime = now;
-    requestAnimFrame(main);
+    requestAnimationFrame(main);
 };
 
 function initGame() {
     startGame();
-    var todelete = 'justtesting';
 }
 
 function startGame() {
-    document.getElementById('btn-play-again').addEventListener('click', function () {
+    document.getElementById('btn-play-again')
+        .addEventListener('click', function (){
         resetGame();
     });
 
@@ -63,13 +62,11 @@ function startGame() {
     main();
 }
 
-// TODO: resources
 resources.load([
     'img/ships.png'
 ]);
 //resources.onReady(initGame);
 document.getElementById('btn-play').addEventListener('click', initGame);
-
 
 // Reset game to original state
 function resetGame(newLives) {

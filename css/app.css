@@ -16,7 +16,7 @@ svg text{
 }
 /* Welcome screen */
 #welcome-screen #title1 { font-size: 1400% }
-#welcome-screen #title2 { font-size: 500%; fill: #0af }
+#welcome-screen #title2 { font-size: 500%; fill: #D8E30B }
 #welcome-screen #btn-play { font-size: 500%; }
 #welcome-screen #btn-play:hover{ cursor: pointer; fill:#444;}
 
@@ -75,7 +75,7 @@ canvas {
 .game-info{
     position: absolute;
     z-index: 2;
-    color:  #0af;
+    color:  #D8E30B;
     font-weight: bold;
 }
 
